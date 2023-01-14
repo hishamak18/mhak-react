@@ -1,7 +1,7 @@
 import React from 'react'
 import Announsment from './Announsment'
 import NavBar from './NavBar'
-// import Slider from './Slider'
+import Slider from './Slider'
 
 
 
@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Announsment/>
       <NavBar/>
-      {/* <Slider/> */}
+      <Slider/>
   
     </div>
   )
