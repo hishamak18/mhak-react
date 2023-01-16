@@ -58,6 +58,9 @@ const InfoContainer = styled.div`
 
 const Tittle = styled.h1`
   font-size: 70px;
+  &:hover{
+    transform:scale(1.1)
+  }
 `
 
 const Desc = styled.p`
@@ -65,6 +68,10 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+  
+  &:hover{
+    transform:scale(1.1)
+  }
 `
 const Button = styled.button`
   padding: 10px;
@@ -74,12 +81,22 @@ const Button = styled.button`
   border:none;
   box-shadow: 0 0 5px .5px rgba(0, 0, 0, 0.287);
   cursor: pointer;
+
+  &:hover{
+    background-color: rgb(92, 86, 86);
+    color: white;
+    font-weight: bolder;
+    border-radius: 4px;
+    transform:scale(1.1);
+  }
   
 `
 
 const Image = styled.img`
   height: 80%;
   border-radius:12px;
+
+  
 `
 
 const Slider = () => {
@@ -101,7 +118,7 @@ const Slider = () => {
         <Wrapper slideIndex={slideIndex}>
           {sliderItems.map((item) => {
             return (
-              <Slide bg={item.bg}>
+              <Slide bg={item.bg}key={item.id}>
                 <ImgContainer>
                   <Image src={item.img} />
                 </ImgContainer>
