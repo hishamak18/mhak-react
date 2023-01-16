@@ -11,6 +11,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding:10px 20px;
     display:flex;
+    // overflow:hidden;
     align-items:center;
     justify-content:space-between;
 `
@@ -73,7 +74,7 @@ const NavBar = () => {
     </Centre>
     <Right>
 
-        <MenuItem>Registration</MenuItem>
+        <MenuItem>Home</MenuItem>
         <MenuItem>Sign In</MenuItem>
         <MenuItem>
         <Badge badgeContent={4} color="primary">

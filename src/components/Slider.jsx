@@ -1,7 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material'
 import { useState } from 'react'
 import styled from 'styled-components'
-import sliderItems from '../pages/data'
+import {sliderItems} from '../pages/data'
 import '../style.css'
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
 `
 const Arrow = styled.div`
   width: 50px;
@@ -32,7 +32,8 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
- z trasition:all 1.5s ease;
+
+  transition: all 1s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `
 const Slide = styled.div`
@@ -100,7 +101,7 @@ const Slider = () => {
         <Wrapper slideIndex={slideIndex}>
           {sliderItems.map((item) => {
             return (
-              <Slide>
+              <Slide bg={item.bg}>
                 <ImgContainer>
                   <Image src={item.img} />
                 </ImgContainer>

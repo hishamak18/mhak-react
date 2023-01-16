@@ -1,4 +1,4 @@
-  const sliderItems = [
+export const sliderItems = [
     {
         id:1,
         img:"https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2hvZSUyMHBuZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
@@ -20,7 +20,23 @@
         desc:"DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS",
         bg:"f5fafd",
     },
-
-
 ]
-export default sliderItems
+ export  const catogories = [
+    {
+        id:1,
+        img:"https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNob2UlMjBwbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        title:"ANGLED"
+    }
+    ,
+    {
+        id:2,
+        img:"https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2hvZSUyMHBuZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        title:"CASUAL"
+    }
+    ,{
+        id:3,
+        img:"https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2hvZSUyMHBuZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        title:"FORMAL"
+    }
+]
+

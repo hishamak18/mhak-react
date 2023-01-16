@@ -1,4 +1,4 @@
-import Home from "/home/hishamak/Desktop/react-ecomerce/src/components/Home.jsx";
+import Home from "./Home.jsx";
 
 
 const App = () => {

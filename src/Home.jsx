@@ -1,7 +1,7 @@
 import React from 'react'
-import Announsment from './Announsment'
-import NavBar from './NavBar'
-import Slider from './Slider'
+import Announsment from './components/Announsment'
+import NavBar from './components/NavBar'
+import Slider from './components/Slider'
 
 
 
@@ -12,7 +12,6 @@ const Home = () => {
       <Announsment/>
       <NavBar/>
       <Slider/>
-  
     </div>
   )
 }
