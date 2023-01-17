@@ -95,7 +95,7 @@ const Button = styled.button`
 
 const Image = styled.img`
   height: 80%;
-  border-radius:12px;
+  border-radius:8px;
 
   
 `

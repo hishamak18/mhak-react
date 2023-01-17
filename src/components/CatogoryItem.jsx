@@ -6,12 +6,18 @@ margin:3px;
 height:70vh;
 position:relative;
 // background-color:#f5fafd;
+border-radius:8px;
+&:hover{
+  box-shadow: -9px 8px 25px 2px rgba(0, 0, 0, 0.278);
+
+}
 `
 const Image = styled.img`
   height:100%;
   width:100%;
   border-radius:8px;
   object-fit:cover;
+ 
 
 `
 const Info = styled.div`

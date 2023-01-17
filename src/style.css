@@ -11,3 +11,7 @@
 .cart:hover{
     transform:scale(1.2)
     }
+.icn:hover {
+        transform:scale(1.1);
+       
+    }
