@@ -16,7 +16,7 @@ const Container  = styled.div
 padding-left:30px;
 display: grid;
 grid-template-columns: auto auto auto auto;
-gap: 30px 30px;
+gap: 20px 20px;
 `
 
 const Products = () => {

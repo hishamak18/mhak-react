@@ -4,7 +4,7 @@ import { ShoppingCartOutlined,FavoriteBorderOutlined,SearchOutlined } from '@mui
 
 
 const Info=styled.div`  
-    opacity: 0;
+    opacity: 1;
     width:100%;
     height:100%;
     position:absolute;
@@ -35,7 +35,7 @@ border-radius:12px;
 position:relative;
 
 &:hover ${Info}{
-   opacity:1;
+//    opacity:1;
     box-shadow: 0 0 0 .5px rgba(0, 0, 0, 0.287);
     
 }
