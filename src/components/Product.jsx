@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import { ShoppingCartOutlined,FavoriteBorderOutlined,SearchOutlined } from '@mui/icons-material'
-
+import { mobile } from "../responsive";
 
 
 const Info=styled.div`  
-    opacity: 1;
+    opacity: 0;
     width:100%;
     height:100%;
     position:absolute;
@@ -12,7 +12,8 @@ const Info=styled.div`
     left:50px;
     z-index:3;
     display:flex;
-    // align-items:center;
+    align-items: center;
+  justify-content: center;
     background-color:rgba(0,0,0,0.2);
     position:absolute;
     top:0;
@@ -33,9 +34,11 @@ box-shadow: -9px 8px 25px 2px rgba(0, 0, 0, 0.278);
 border:none;
 border-radius:12px;
 position:relative;
+${mobile({ flexDirection: "column" })}
+
 
 &:hover ${Info}{
-//    opacity:1;
+   opacity:1;
     box-shadow: 0 0 0 .5px rgba(0, 0, 0, 0.287);
     
 }

@@ -3,7 +3,7 @@ import Cart from "./pages/Cart.jsx";
 
 
 const App = () => {
-  return <Cart/>
+  return <Home/>
 };
 
 export default App;

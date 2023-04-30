@@ -4,33 +4,23 @@ import Product from "./Product.jsx"
 
 
 
-const Content = styled.div`
-    // display:flex;
-    // align-items:center;
-    // justify-content:center;
-    padding-top:50px;
-`
-
-const Container  = styled.div
-`
-padding-left:30px;
-display: grid;
-grid-template-columns: auto auto auto auto;
-gap: 20px 20px;
-`
+const Container = styled.div`
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:30px;
+    
+`;
 
 const Products = () => {
   return (
-    <Content>
-      <Container>
-        {mainProducts.map((item)=> (
-            <Product item={item} key={item.id}/>
-            ))}
-
-            
+    <Container>
+      {mainProducts.map((item) => (
+        <Product item={item} key={item.id} />
+      ))}
     </Container>
-            </Content>
-  )
-}
+  );
+};
 
 export default Products

@@ -8,10 +8,13 @@ import {
   Twitter,
 } from '@mui/icons-material'
 import styled from 'styled-components'
+import { mobile } from "../responsive";
+
 
 const Container = styled.div`
   display: flex;
   margin-left: 60px;
+  ${mobile({ flexDirection: "column" })}
 `
 const Left = styled.div`
   flex: 1;
@@ -52,10 +55,12 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#fff8f8" })}
 `
 const Tittle = styled.h3`
   margin-bottom: 30px;
@@ -91,7 +96,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>Sana.</Logo>
+        <Logo>Mhak.</Logo>
         <Desc>
           Lorem ipsum dolor sit amet, <br /> consectetur adipisicing elit.{' '}
           <br /> Sunt blanditiis assumenda ex nobis quia modi vitae beatae{' '}
