@@ -7,6 +7,10 @@ const authRoute = require('./routes/auth')
 const productRoute = require('./routes/product')
 const cartRoute = require('./routes/cart')
 const orderRoute = require('./routes/order')
+const stripeRoute = require('./routes/stripe')
+const cors = require('cors');
+
+
 
 
 
@@ -19,14 +23,14 @@ mongoose
     console.log(err);
   });
   app.use(express.json( ))
-
+  app.use(cors());
   app.use('/backend/users',userRoute);
   app.use('/backend/auth',authRoute)
   app.use('/backend/products',productRoute)
   app.use("/backend/carts", cartRoute);
   app.use("/backend/orders", orderRoute);
+  app.use("/backend/checkout", stripeRoute);
 
-
-  app.listen( 5008, () => {
-    console.log("Backend server is running!");
+  app.listen( process.env.PORT, () => {
+    console.log(`Backend server is running at ${process.env.PORT}!`);
   });
