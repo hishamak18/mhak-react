@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.icon{
+    margin-top:5px
+}
+.cart:hover{
+    transform:scale(1.2)
+    }
+.icn:hover {
+        transform:scale(1.1);
+       
+    }
