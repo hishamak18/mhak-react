@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Add, Remove } from "@mui/icons-material";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import Announsment from "../components/Announsment";
+import Announcement from "../components/Announsment";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
+import { useHistory } from "react-router";
+
 const KEY = process.env.REACT_APP_STRIPE;
+
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -165,27 +168,31 @@ const Cart = () => {
   const onToken = (token) => {
     setStripeToken(token);
   };
-  console.log(stripeToken);
+  console.log(stripeToken)
 
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await userRequest.post("checkout/payment", {
+        const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
-          amount: 500,
+          email: stripeToken.email,
+          amount: cart.total * 100, // convert to cents
         });
         history.push("/success", {
           stripeData: res.data,
-          products: cart, });
-      } catch {}
+          products: cart,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
-
+  
   return (
     <Container>
       <Navbar />
-      <Announsment />
+      <Announcement />
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
@@ -222,7 +229,7 @@ const Cart = () => {
                     <Remove />
                   </ProductAmountContainer>
                   <ProductPrice>
-                    {product.price * product.quantity}
+                    $ {product.price * product.quantity}
                   </ProductPrice>
                 </PriceDetail>
               </Product>
@@ -233,26 +240,26 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice> {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice> 5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice> -5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice> {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="Mhak Shop"
               image="https://avatars.githubusercontent.com/u/1486366?v=4"
               billingAddress
               shippingAddress
-              description={`Your total is ${cart.total}`}
+              description={`Your total is $${cart.total}`}
               amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}

@@ -6,7 +6,7 @@ const Success = () => {
 
   console.log(location)
   return (
-    <div>Success</div>
+    <div>Success</div>   
   )
 }
 
