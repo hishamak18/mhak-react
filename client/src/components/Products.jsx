@@ -22,8 +22,8 @@ const Products = ({cat,filters,sort}) => {
   useEffect(()=>{
     const getProducts = async ()=>{
       try{
-        const res = await axios.get(cat ? `http://localhost:5009/backend/products?category=${cat}`
-        : "http://localhost:5009/backend/products" )
+        const res = await axios.get(cat ? `http://mhak.live/backend/products?category=${cat}`
+        : "http://mhak.live/backend/products" )
         setProducts(res.data)
       }catch(err){
 
