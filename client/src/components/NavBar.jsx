@@ -1,4 +1,4 @@
-import { Badge, useScrollTrigger } from "@mui/material";
+import { Badge } from "@mui/material";
 import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
@@ -6,10 +6,6 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const l ={
-  color:"black",
-  textDecoration:"none"
-}
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
@@ -55,7 +51,6 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
-  cursor:pointer;
   ${mobile({ fontSize: "24px" })}
 `;
 const Right = styled.div`
@@ -74,8 +69,7 @@ const MenuItem = styled.div`
 `;
 
 const Navbar = () => {
-  const quantity  = useSelector(state=>state.cart.quantity)
-  console.log(quantity)
+  const quantity = useSelector(state=>state.cart.quantity)
   return (
     <Container>
       <Wrapper>
@@ -86,16 +80,20 @@ const Navbar = () => {
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
-        <Link style={l} to="/">
-        
         <Center>
-          <Logo>Mhak.</Logo>
+          <Link to="/" style={{textDecoration:"none",color:"black"}}>
+          <Logo>Mhak</Logo>
+          </Link>
         </Center>
-        </Link>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <Link style={l} to="/cart">
+          <Link to="/Register" style={{textDecoration:"none",color:"black"}}>
+          <MenuItem>Sign Up</MenuItem>
+          </Link>
+          <Link to="/Login" style={{textDecoration:"none",color:"black"}}>
+          <MenuItem>Login</MenuItem>
+          </Link>
+
+          <Link to="/cart" style={{textDecoration:"none",color:"black"}}>
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
               <ShoppingCartOutlined />
