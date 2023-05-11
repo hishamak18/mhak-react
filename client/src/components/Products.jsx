@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {mainProducts} from "../pages/data.js"
 import Product from "./Product.jsx"
 import axios from 'axios'
+import { userRequest } from '../requestMethods.js'
 
 
 
@@ -22,8 +23,8 @@ const Products = ({cat,filters,sort}) => {
   useEffect(()=>{
     const getProducts = async ()=>{
       try{
-        const res = await axios.get(cat ? `http://mhak.live/backend/products?category=${cat}`
-        : "http://mhak.live/backend/products" )
+        const res = await userRequest.get(cat ? `/products?category=${cat}`
+        : "/products" )
         setProducts(res.data)
       }catch(err){
 
