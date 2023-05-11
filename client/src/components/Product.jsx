@@ -21,6 +21,8 @@ const Info=styled.div`
     top:0;
     left:0;
     border-radius:12px;
+    ${mobile({borderRadius:"0" })}
+
      
 `
 const Container=styled.div`
@@ -54,6 +56,8 @@ width:100%;
 border-radius:12px;
 position:absolute;
 top:0;
+${mobile({borderRadius:"0" })}
+
   `
 
 
@@ -77,17 +81,17 @@ const Product = ({item }) => {
     <Container>
         <Image src={item.img} />
         <Info>
-            <Icon>
+            {/* <Icon>
                 <ShoppingCartOutlined className="icon"/>
-            </Icon>
+            </Icon> */}
             <Icon>
               <Link to={`/product/${item._id}`}>
                 <SearchOutlined className="icon"/>
               </Link>
             </Icon>
-            <Icon>
+            {/* <Icon>
                 <FavoriteBorderOutlined className="icon" />
-            </Icon>
+            </Icon> */}
         </Info>
 
     </Container>

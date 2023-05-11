@@ -8,7 +8,6 @@ flex:1;
 margin:3px;
 height:70vh;
 position:relative;
-// background-color:#f5fafd;
 border-radius:8px;
 &:hover{
   box-shadow: -9px 8px 25px 2px rgba(0, 0, 0, 0.278);
@@ -20,7 +19,7 @@ const Image = styled.img`
   width:100%;
   border-radius:8px;
   object-fit:cover;
-  ${mobile({ height: "20vh" })}
+  ${mobile({ height: "20vh",borderRadius:"0" })}
 
 `
 const Info = styled.div`
